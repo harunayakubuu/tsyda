@@ -1,0 +1,319 @@
+
+{% extends 'front_base.html' %}
+{% load static %}
+{% block head_title %}{{ block.super }} About Us {% endblock head_title %}
+
+{% block content %}
+<section class="bg-pages" style="background-image:url('{% static "frontend/images/home/bg-default.jpeg" %}')">
+    <div class="home-center">
+        <div class="home-desc-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="page-next-level text-white">
+                            <h4 class="text-uppercase text-white">About Us</h4>
+                            <div class="page-two page-next"> <a href="{% url 'index' %}">Home</a> <i class="mdi mdi-chevron-right"></i> &nbsp;<span>About Us</span> </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section pb-0 bg-white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div class="section-title">
+                    <h3 class="f-24">We Are TSYDA</h3>
+                    <div class="spacer-45"></div>
+                    <img src="{% static 'frontend/images/home/about.jpg' %}" class="img-fluid" alt="" width="1910px" height="529px">
+                    <div class="spacer-15"></div>
+                    <p class="text-muted">
+                        About text comes here, About text comes here, About text comes here, 
+                        About text comes here, About text comes here, About text comes here, 
+                        About text comes here, About text comes here, About text comes here, 
+                        About text comes here, About text comes here, About text comes here,
+                        About text comes here, About text comes here, About text comes here,
+                        About text comes here, About text comes here, About text comes here, 
+                        About text comes here, About text comes here, About text comes here, 
+                        About text comes here, About text comes here, About text comes here, 
+                        About text comes here, About text comes here, About text comes here,
+                        About text comes here, About text comes here, About text comes here,
+                        About text comes here, About text comes here, About text comes here,
+                    </p>
+                    <h6>History</h6>
+                    <p class="text-muted">
+                        TSYDA was established in the year 2011 as an association of Toro indigenes and by extension Bauchi state.
+                        Its fundamental task as encapsulated in its motto <strong>youths for development</strong> was to
+                        build and sustain a viable socio-economic climate for the youths especially at the grassroot level.
+                        At inception, we took-off with few dozens of members, but before a year in existence the association blossomed
+                        with no fewer than a <b>thousand</b> active members. Today, it boasts of thousands and recieves scores of
+                        membership requests by the day.
+                    </p>
+                    <p class="text-muted">
+                        We operate an open door policy, accomodating all manners of development-oriented people defying differences
+                        in religion, sex, accademic of financial status.
+                    </p>
+                    <p class="text-muted">
+                        We have met all legal criteria for registration and got the blessings and support of our traditional and <br>
+                        and religious leaders.
+                    </p>
+                    <p class="text-muted">
+                        We are non partisan in our operations, however, this does not prevent us from playing our role in political <br>
+                        and social processes for the benefit of all in the society. 
+                    </p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="section-title text-center">                            
+                    <h6>Services</h6>
+                    <h3 class="f-24">What We Do</h3>
+                    <div class="divider"></div>
+                    <div class="line-bot"></div>
+                    <div class="spacer-15"></div>
+                    <p class="text-muted">All that which we do at TSYDA is for the YOUTHS and by the Youths.</p>
+                    <div class="spacer-45"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="col-lg-8"> -->
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="services services-three mb-30">
+                        <i class="fab fa-cloudversify"></i>
+                        <h4 class="f-18">Educational Programs</h4>
+                        <div class="spacer-15"></div>
+                        <p class="mb-0">
+                            We provide educational programs for the youths. We provide educational programs for the youths.
+                            We provide educational programs for the youths. We provide educational programs for the youths.
+                            We provide educational programs for the youths. We provide educational programs for the youths.
+                            We provide educational programs for the youths. We provide educational programs for the youths.
+                            We provide educational programs for the youths. We provide educational programs for the youths.
+                            We provide educational programs for the youths. We provide educational programs for the youths.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="services services-three mb-30">
+                        <i class="fas fa-clock"></i>
+                        <h4 class="f-18">Humanitarian Programs</h4>
+                        <div class="spacer-15"></div>
+                        <p class="mb-0">
+                            We provide Humanitarian programs for the youths. We provide Humanitarian programs for the youths.
+                            We provide Humanitarian programs for the youths. We provide Humanitarian programs for the youths.
+                            We provide Humanitarian programs for the youths. We provide Humanitarian programs for the youths.
+                            We provide Humanitarian programs for the youths. We provide Humanitarian programs for the youths.
+                            We provide Humanitarian programs for the youths. We provide Humanitarian programs for the youths.
+                            We provide Humanitarian programs for the youths. We provide Humanitarian programs for the youths.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="services services-three mb-30">
+                        <i class="fas fa-code"></i>
+                        <h4 class="f-18">Economic Empowerment</h4>
+                        <div class="spacer-15"></div>
+                        <p class="mb-0">
+                            We provide Economic Empowerment programs for the youths. We provide Economic Empowerment programs for the youths.
+                            We provide Economic Empowerment programs for the youths. We provide Economic Empowerment programs for the youths.
+                            We provide Economic Empowerment programs for the youths. We provide Economic Empowerment programs for the youths.
+                            We provide Economic Empowerment programs for the youths. We provide Economic Empowerment programs for the youths.
+                            We provide Economic Empowerment programs for the youths. We provide Economic Empowerment programs for the youths.
+                            We provide Economic Empowerment programs for the youths. We provide Economic Empowerment programs for the youths.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="services services-three mb-30">
+                        <i class="fab fa-rev"></i>
+                        <h4 class="f-18">Rehabilitation</h4>
+                        <div class="spacer-15"></div>
+                        <p class="mb-0">
+                            We provide Rehabilitation programs for the youths. We provide Rehabilitation programs for the youths.
+                            We provide Rehabilitation programs for the youths. We provide Rehabilitation programs for the youths.
+                            We provide Rehabilitation programs for the youths. We provide Rehabilitation programs for the youths.
+                            We provide Rehabilitation programs for the youths. We provide Rehabilitation programs for the youths.
+                            We provide Rehabilitation programs for the youths. We provide Rehabilitation programs for the youths.
+                            We provide Rehabilitation programs for the youths. We provide Rehabilitation programs for the youths.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <!-- </div> -->
+
+    </div>
+</section>
+
+<section class="bg-counter" style="background-image:url('{% static "frontend/images/home/counter.jpg" %}')">
+    <div class="container">
+        <div class="row" id="counter">
+            <div class="col-md-3 col-6">
+                <div class="text-center counter-funfact p-4 mt-3 text-white">
+                    <i class="fas fa-users counter-icon"></i>
+                    <h2 class="counter-value" data-count="{{ user_count }}">{{ user_count }}</h2>
+                    <p class="counter-name mb-0">Active Members</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="text-center counter-funfact p-4 mt-3 text-white">
+                    <i class="fas fa-mug-hot counter-icon"></i>
+                    <h2 class="counter-value" data-count="{{ partner_count }}">{{ partner_count }}</h2>
+                    <p class="counter-name mb-0">Partners</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="text-center counter-funfact p-4 mt-3 text-white">
+                    <i class="fas fa-lightbulb counter-icon"></i>
+                    <h2 class="counter-value" data-count="2380">223</h2>
+                    <p class="counter-name mb-0">Ideas</p>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-6">
+                <div class="text-center counter-funfact p-4 mt-3 text-white">
+                    <i class="fas fa-tv counter-icon"></i>                      
+                    <h2 class="counter-value" data-count="{{ project_count }}">{{ project_count }}</h2>
+                    <p class="counter-name mb-0">Completed Projects</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-light" id="team">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="section-title text-center">
+                    <h3 class="f-24">Team</h3>
+                    <div class="spacer-15"></div>
+                    <p class="text-muted">
+                        Our team members
+                    </p>
+                    <div class="spacer-45"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            
+            {% for user in users %}
+            {% if user.profile.picture %}
+            <div class="col-lg-3 col-md-6">
+                <div class="team-box mb-sm-30" data-aos="fade-down">
+                    <div class="team-box-img">
+                        <img src="{% static 'frontend/images/team/img-2.jpg' %}" alt="" class="img-fluid">
+                    </div>
+                    <div class="team-members-overlay">
+                        <div class="team-info text-center">
+                            <h3 class="mb-0">{{ user.username }}</h3>
+                            <small> {% if user.profile.designation %} {{ user.profile.designation }}{% endif %}</small>
+                        </div>
+                    </div>
+                    <div class="team-social-overlay">
+                        <div class="mt-2">
+                            <ul class="list-unstyled team-icon">
+                                <li class="mt-2"><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="mt-2"><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li class="mt-2"><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="section bg-white" style="background-image:url('{% static "frontend/images/bg-contact.jpg" %}')">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="section-title text-center">
+                    <h3 class="f-24">Join us in the good course of Salvaging The Youth</h3>
+                    <div class="spacer-15"></div>
+                    <p class="text-muted">
+                        You can contribute your quota towards this rewarding course. We...
+                    </p>
+                    <div class="spacer-15"></div>
+                    <div>
+                        <a href="{% url 'contact' %}" class="btn btn-custom">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-2 bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="section-title text-center">
+                    <h6>Partners</h6>
+                    <h3 class="f-24">Our <a href="{% url 'partners' %}">Partners</a></h3>
+                    <!-- <div class="line-bot"></div>
+                    <div class="spacer-15"></div>
+                    <p class="text-muted">Our Clients.</p>
+                    <div class="spacer-45"></div> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="spacer-45"></div>
+                    <!-- <span class="bar"></span> -->
+                    <div class="spacer-45"></div>
+                    <div class="slider slick-4">
+                        {% for partner in partners %}
+                            {% if partner.picture %}
+                                <div>
+                                    <img src="{{ partner.picture.url }}" alt="partners" class="img-fluid mx-auto d-block" width="100px" height="75px">
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- <section class="section-2 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 p-0">
+                <div class="slider autoplay">
+                    <div><img src="{% static 'frontend/images/client/client-01.png' %}" alt="partners" class="img-fluid mx-auto d-block"></div>
+                    <div><img src="{% static 'frontend/images/client/client-02.png' %}" alt="partners" class="img-fluid mx-auto d-block"></div>
+                    <div><img src="{% static 'frontend/images/client/client-03.png' %}" alt="partners" class="img-fluid mx-auto d-block"></div>
+                    <div><img src="{% static 'frontend/images/client/client-04.png' %}" alt="partners" class="img-fluid mx-auto d-block"></div>
+                    <div><img src="{% static 'frontend/images/client/client-05.png' %}" alt="partners" class="img-fluid mx-auto d-block"></div>
+                    <div><img src="{% static 'frontend/images/client/client-06.png' %}" alt="partners" class="img-fluid mx-auto d-block"></div>
+                    <div><img src="{% static 'frontend/images/client/client-07.png' %}" alt="partners" class="img-fluid mx-auto d-block"></div>
+                    <div><img src="{% static 'frontend/images/client/client-08.png' %}" alt="partners" class="img-fluid mx-auto d-block"></div>
+                    <div><img src="{% static 'frontend/images/client/client-09.png' %}" alt="partners" class="img-fluid mx-auto d-block"></div>
+                    <div><img src="{% static 'frontend/images/client/client-10.png' %}" alt="partners" class="img-fluid mx-auto d-block"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+{% endblock %}

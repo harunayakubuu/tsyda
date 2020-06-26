@@ -1,0 +1,181 @@
+{% extends 'front_base.html' %}
+{% load static %}
+{% block head_title %}{{ block.super }} {{ post.title }}{% endblock %}
+
+{% block content %}
+<section class="bg-default" style="background-image:url('{% static "frontend/images/home/bg-default.jpeg" %}')">
+    <div class="home-center">
+        <div class="home-desc-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="page-next-level text-white">
+                            <h4 class="text-uppercase text-white">{{ post.title }}</h4>
+                            <div class="page-two page-next"> <a href="{% url 'index' %}">Home</a> <i class="mdi mdi-chevron-right"></i> &nbsp;<a href="{% url 'posts' %}">Blog</a> <i class="mdi mdi-chevron-right"></i> &nbsp;<span>{{ post.title }}</span> </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- HOME END-->  
+
+<!-- BLOG START -->
+<section class="section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- Post Start -->
+                <article class="post m-0">
+                    <div class="post-preview">
+                        <img src="{{ post.picture.url }}" alt="" class="img-fluid mx-auto d-block" height="800px" width="800px">
+                    </div>
+
+                    <div class="post-head-content">
+                        <div class="post-header">
+                            <ul class="post-meta list-unstyled">
+                                <li class="list-inline-item"><i class="fas fa-user"></i> <a href="#"><small>{{ post.author }}</small></a></li>
+                                <li class="list-inline-item"><i class="fas fa-tag"></i>
+                                    {% for cat in post.categories.all %}
+                                        <small>{{ cat }}{% if not forloop.last %}, {% endif %}</small>
+                                    {% endfor %}
+                                </li>
+                                <li class="list-inline-item"><i class="far fa-calendar-check"></i> <small>{{ post.created }}</small></li>
+                            </ul>
+                        </div>
+
+                        <div class="post-content">
+                            <p class="text-muted">{{ post.description|linebreaks }}</p>
+                        </div>
+
+                        <!-- <div class="row">
+                            <div class="col-md-6">
+                                <div class="post-preview">
+                                    <a href="single-post.html"><img src="images/blog/img-1.jpg" alt="" class="img-fluid mx-auto d-block"></a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="post-preview">
+                                    <a href="single-post.html"><img src="images/blog/img-2.jpg" alt="" class="img-fluid mx-auto d-block"></a>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </article>                        
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="comments-area pb-0">
+                            <div class="page-title mt-3 mb-3">
+                                <h4><span>Comments</span></h4>
+                            </div>
+
+                            <ul class="media-list list-unstyled mb-0">
+                                <li class="media">
+                                    <a class="float-left pr-3" href="#">
+                                        <img class="img-fluid d-block mx-auto rounded-circle" src="images/client/img-1.jpg" alt="img">
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="#" class="text-custom float-right text-muted"><i class="mdi mdi-reply"></i>&nbsp; Reply</a>
+                                        <h4 class="media-heading">Clary Gay</h4>
+                                        <h6 class="text-muted">Feb 03, 2019</h6>
+                                        <p class="">It seems that only fragments of the original text remain in the Lorem Ipsum texts used today. One may speculate that over the course.</p>
+                                    </div>
+                                </li>
+
+                                <li class="media mt-4">
+                                    <a class="float-left pr-3" href="#">
+                                        <img class="img-fluid d-block mx-auto rounded-circle" src="images/client/img-2.jpg" alt="img">
+                                    </a>
+
+                                    <div class="media-body">
+                                        <a href="#" class="text-custom float-right text-muted"><i class="mdi mdi-reply"></i>&nbsp; Reply</a>
+                                        <h4 class="media-heading">Cather Shelton</h4>
+                                        <h6 class="text-muted">Feb 03, 2019</h6>
+                                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.</p>
+
+                                        <div class="media sub_media mt-4">
+                                            <a class="float-left pr-3" href="#">
+                                                <img class="img-fluid d-block mx-auto rounded-circle" src="images/client/img-3.jpg" alt="img">
+                                            </a>
+                                            <div class="media-body">
+                                                <a href="#" class="text-custom float-right text-muted"><i class="mdi mdi-reply"></i>&nbsp; Reply</a>
+                                                <h4 class="media-heading">Alex Spaulding</h4>
+                                                <h6 class="text-muted">Feb 03, 2019</h6>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="media mt-4">
+                                    <a class="float-left pr-3" href="#">
+                                        <img class="img-fluid d-block mx-auto rounded-circle" src="images/client/img-4.jpg" alt="">
+                                    </a>
+                                    <div class="media-body">
+                                        <a href="#" class="text-custom float-right text-muted"><i class="mdi mdi-reply"></i>&nbsp; Reply</a>
+                                        <h4 class="media-heading">Rabada Campbell</h4>
+                                        <h6 class="text-muted">Feb 03, 2019</h6>
+                                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from making</p>
+                                    </div>
+                                </li>
+                                <li class="bar"></li>
+                                <li class="">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="page-title mt-3 mb-3">
+                                                <h4><span>Let's Talk</span></h4>
+                                            </div>                      
+                                        </div>
+                                    </div>
+
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <textarea id="message" placeholder="Your Comment" rows="4" name="message" class="form-control" required=""></textarea>
+                                                    <span class="input-focus-effect theme-bg"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="form-group">
+                                                    <input id="subject" name="subject" type="text" placeholder="Subject" class="validate form-control" required="">
+                                                    <span class="input-focus-effect theme-bg"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input id="name" name="name" type="text" placeholder="Name" class="validate form-control" required="">
+                                                    <span class="input-focus-effect theme-bg"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <input id="email" type="email" placeholder="Email" name="email" class="validate form-control" required="">
+                                                    <span class="input-focus-effect theme-bg"></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                <div class="send">
+                                                <button type="submit" class="btn btn-custom w-100">Send</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>                        
+            </div>
+            {comment include 'includes/frontend/blog-sidebar.html' comment}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

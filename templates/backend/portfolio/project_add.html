@@ -1,0 +1,94 @@
+{% extends 'back_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block head_title %}{{ block.super }} Project Add{% endblock head_title %}
+
+{% block content %}
+  <div class="content-wrapper">
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-5">
+            <h1>Project Add</h1>
+          </div>
+          <div class="col-sm-2">
+            <h5 style="text-align: center"><a href="{% url 'portfolio-list' %}" class="btn btn-primary">Back</a></h5>
+          </div>
+          <div class="col-sm-5">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+              <li class="breadcrumb-item active">Project Add</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Project Add</h3>
+              <!-- <h5 style="text-align: center"><a href="" class="btn btn-primary">Back</a></h5> -->
+            </div>
+            <div class="card-body">
+              <form action="." method="POST" autocomplete="off" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form|crispy }}                  
+                <div class="row">
+                    <div class="col-12">
+                      <a href="{% url 'portfolio-list' %}" class="btn btn-secondary">Cancel</a>
+                      <input type="submit" value="Create new Porject" class="btn btn-success float-right">
+                    </div>
+                  </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+  </div>
+
+{% endblock %}
+
+<form action="." method="POST" autocomplete="off" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="row">
+    <div class="col-md-6">
+      {{ form.project_title|as_crispy_field }}
+    </div>
+    <div class="col-md-4">
+      {{ form.image|as_crispy_field }}
+    </div>
+    <div class="col-md-2">
+        {{ form.beneficiaries|as_crispy_field }}
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-6">
+        {{ form.categories|as_crispy_field }}
+      </div>
+      <div class="col-md-6">
+        {{ form.sponsors|as_crispy_field }}
+      </div>
+    </div>
+    {{ form.about_project|as_crispy_field }}
+    <div class="row">
+      <div class="col-md-6">
+        {{ form.previous_project|as_crispy_field }}
+      </div>
+      <div class="col-md-6">
+        {{ form.next_project|as_crispy_field }}
+      </div>
+    </div>
+    {{ form.completed|as_crispy_field }}
+    {{ form.date_completed|as_crispy_field }}                  
+  <div class="row">
+      <div class="col-12">
+        <a href="{% url 'portfolio-list' %}" class="btn btn-secondary">Cancel</a>
+        <input type="submit" value="Create new Porject" class="btn btn-success float-right">
+      </div>
+    </div>
+</form>

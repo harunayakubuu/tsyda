@@ -1,0 +1,47 @@
+{% extends 'back_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block head_title %}{{ block.super }} {{ partner.acronym }}{% endblock head_title %}
+
+{% block content %}
+  <div class="content-wrapper">
+
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>{% if partner.acronym %}{{ partner.acronym }}{% else %}{{ partner.name }}{% endif %}</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="{% url 'dashboard' %}">Home</a></li>
+              <li class="breadcrumb-item active">{% if partner.acronym %}{{ partner.acronym }}{% else %}{{ partner.name }}{% endif %}</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="card-title">{% if partner.acronym %}{{ partner.acronym }}{% else %}{{ partner.name }}{% endif %}</h3>
+        </div>
+        <div class="card-body">
+          <div class="post">
+            
+          </div>
+
+          <div class="text-right mt-5 mb-3">
+              <a href="{% url 'partner-list' %}" class="btn btn-sm btn-primary">Back</a>
+              <a href="{% url 'partner-update' partner.id %}" class="btn btn-sm btn-warning">Update</a>
+              <a href="{% url 'partner-delete' partner.pk %}" class="btn btn-sm btn-danger">Delete</a>
+            </div>
+        </div>
+
+        
+      </div>
+
+    </section>
+  </div>
+{% endblock %}

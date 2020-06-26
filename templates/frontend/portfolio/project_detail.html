@@ -1,0 +1,103 @@
+{% extends 'front_base.html' %}
+{% load static %}
+{% block head_title %}{{ block.super }} {{ project.project_title }}{% endblock head_title %}
+
+{% block content %}
+<section class="bg-default" style="background-image:url('{% static "frontend/images/home/bg-default.jpeg" %}')">
+    <div class="home-center">
+        <div class="home-desc-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="page-next-level text-white">
+                            <h4 class="text-uppercase text-white">{{ project.project_title }}</h4>
+                            <div class="page-two page-next"> <a href="{% url 'index' %}">Home</a> <i class="mdi mdi-chevron-right"></i> &nbsp;<span>{{ project.project_title }}</span> </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="{{ project.image.url }}" class="img-fluid mx-auto" alt="img" width="1200px" height="700px">
+            </div>
+        </div>
+
+        <div class="row mt-30">
+            <div class="col-md-8">
+                <div class="mb-sm-30">
+                    <!-- <h4 class="f-18">Introduction</h4> -->
+                    <h4 class="f-24 text-uppercase">Overview of Project</h4>
+                    <p class="text-muted mb-0">{{ project.about_project|linebreaks }}.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="pro-info">
+                    <h4 class="f-22">Project Information</h4>
+                    <ul class="list-unstyled mb-0">
+                        <li><span class="font-weight-bold title-head">Client : </span> <span> {% for sponsor in project.sponsors.all %}{{ sponsor }}{% if not forloop.last %}, {% endif %}{% endfor %}</span></li>
+                        <li><span class="font-weight-bold title-head">Release Date : </span> <span> {{ project.date_completed|date }} </span></li>
+                        <li><span class="font-weight-bold title-head">Location : </span> <span> Project location</span></li>
+                        <li><span class="font-weight-bold title-head">Catagory : </span> <span> {% for cat in project.categories.all %}{{ cat }}{% if not forloop.last %}, {% endif %}{% endfor %} </span></li>
+                        <li><span class="font-weight-bold title-head">Status : </span> <span>{% if project.completed %} Completed {% else %} In Progress. {% endif %}</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-30">
+            <div class="col-md-12 text-center">
+                <div class="section-title text-center">
+                    <h3 class="f-22">Related Projects</h3>
+                    <div class="spacer-15"></div>
+                    <!-- <p class="text-muted">All the lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p> -->
+                    <div class="spacer-15"></div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-30">
+                <a href=""><img src="{% static 'frontend/images/work/port-1.jpg' %}" class="img-fluid mx-auto" alt=""></a>
+            </div>
+
+            <div class="col-md-4 mb-30">
+                <a href=""><img src="{% static 'frontend/images/work/port-2.jpg' %}" class="img-fluid mx-auto" alt=""></a>
+            </div>
+
+            <div class="col-md-4 mb-30">
+                <a href=""><img src="{% static 'frontend/images/work/port-3.jpg' %}" class="img-fluid mx-auto" alt=""></a>
+            </div>
+
+            <!-- <div class="col-md-10">
+                <div class="text-center">
+                    <p class="text-muted mb-0">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
+
+<section class="section bg-white" style="background-image:url('{% static "frontend/images/bg-contact.jpg" %}')">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="section-title text-center">
+                    <h3 class="f-24">Support us by donating on this rewarding course</h3>
+                    <div class="spacer-15"></div>
+                    <p class="text-muted">With your kind support, we shall reach a wider range of our youths especially the female folks. Thank you as you donate generousely.</p>
+                    <div class="spacer-15"></div>
+                    <div>
+                        <a href="page_contact-one.html" class="btn btn-custom">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

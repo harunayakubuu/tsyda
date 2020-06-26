@@ -1,0 +1,520 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block head_title %}TSYDA |  {% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="{% static 'frontend/images/home/tsydafavico.png' %}">
+        <link rel="stylesheet" href="{% static 'frontend/css/bootstrap.min.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'frontend/css/magnific-popup.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'frontend/css/materialdesignicons.min.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'frontend/css/fontawesome.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'frontend/css/pe-icon-7-stroke.css' %}" type="text/css" />
+        <link rel="stylesheet" href="{% static 'frontend/css/owl.carousel.min.css' %}"/> 
+        <link rel="stylesheet" href="{% static 'frontend/css/owl.theme.css' %}"/> 
+        <link rel="stylesheet" href="{% static 'frontend/css/owl.transitions.css' %}"/>
+        <link rel="stylesheet" href="{% static 'frontend/css/slick.css' %}"/> 
+        <link rel="stylesheet" href="{% static 'frontend/css/slick-theme.css' %}"/> 
+        <link rel="stylesheet" href="{% static 'frontend/css/style.css' %}" type="text/css" />
+    </head>
+
+    <body>
+        <!-- <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="cube1"></div>
+                    <div class="cube2"></div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="tagline hidden-md">
+            <div class="container">
+                <div class="float-left">
+                    <div class="login">
+                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-sign-in-alt"></i> Login</a>
+                        <a href="#" data-toggle="modal" data-target="#exampleModalCenter1"><i class="fas fa-user"></i> Register</a>
+                    </div>
+                </div>
+                <div class="float-right">
+                    <ul class="top_socials">
+                        <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <header id="topnav" class="defaultscroll fixed-top navbar-sticky taglines sticky">
+            <div class="container">
+                <div>
+                    <a href="{% url 'index' %}" class="logo">
+                        <img src="{% static 'frontend/images/home/newlogo.png' %}" alt="missing_logo" height="16">
+                    </a>
+                </div>
+
+                <div class="menu-extras">
+                    <div class="menu-item">
+                        <a class="navbar-toggle">
+                            <div class="lines">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="navigation">
+                    <ul class="navigation-menu">
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'posts' %}">Blog</a></li>
+                        <li><a href="{% url 'project-list' %}">Portfolio</a></li>
+                        <li><a href="{% url 'partners' %}">Partners</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                        <li><a href="{% url 'faqs' %}">FAQ</a></li>
+                        
+                        <!-- <li class="has-submenu">
+                            <a href="#">Home</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li class="has-submenu"><a href="javascript:void(0)"> Multi Page Home</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="index.html"> Home Business</a></li>  
+                                        <li><a href="home_agency.html"> Home Agency</a></li> 
+                                        <li><a href="home_portfolio.html"> Home Portfolio</a></li>
+                                        <li><a href="home_slider.html"> Home Slider</a></li>
+                                        <li><a href="home_boxed.html"> Home Boxed</a></li> 
+                                        <li><a href="home_construction.html"> Home Construction</a></li>
+                                        <li><a href="home_interior.html"> Home Interior</a></li>
+                                        <li><a href="home_tour.html"> Home Tour & Travels</a></li>                                            
+                                        <li><a href="home_blog.html"> Home Blog</a></li> 
+                                        <li><a href="home_parallax.html"> Home Parallax</a></li>                                           
+                                        <li><a href="home_shop.html"> Home Shop</a></li>
+                                    </ul>  
+                                </li>
+                                <li class="has-submenu"><a href="javascript:void(0)"> One Page Home</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="home_onepage.html"> Home Onepage</a></li>
+                                        <li><a href="home_landing.html"> Home Landing</a></li>
+                                        <li><a href="home_app-landing.html"> Home App Landing</a></li>
+                                        <li><a href="home_personal.html"> Home Personal</a></li>
+                                        <li><a href="home_gym.html"> Home Gym</a></li>
+                                        <li><a href="home_restaurant.html"> Home Restaurant</a></li> 
+                                        <li><a href="home_barber.html"> Home Barber</a></li>
+                                        <li><a href="home_photography.html"> Home Photography</a></li> 
+                                        <li><a href="home_medical.html"> Home Medical</a></li>   
+                                    </ul>  
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)">Pages</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li class="has-submenu"><a href="javascript:void(0)"> About</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="page_aboutus.html">About Us</a></li>
+                                        <li><a href="page_aboutme.html">About Me</a></li>
+                                    </ul>  
+                                </li>
+                                <li class="has-submenu"><a href="javascript:void(0)"> Contact</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="page_contact-one.html">Contact One</a></li>
+                                        <li><a href="page_contact-two.html">Contact Two</a></li>
+                                    </ul>  
+                                </li>
+                                <li><a href="page_service.html"> Services</a></li>
+                                <li><a href="page_team.html"> Team</a></li>
+                                <li><a href="page_faq.html"> FAQ</a></li>
+                                <li><a href="page_pricing.html"> Pricing</a></li>
+                                <li class="has-submenu"><a href="javascript:void(0)"> Login / Register</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="page_login.html"> Login Page</a></li>
+                                        <li><a href="page_signup.html"> Signup Page</a></li>
+                                        <li><a href="page_forgotpassword.html"> Forgot Password</a></li>
+                                    </ul>  
+                                </li>
+                                <li><a href="page_comingsoon.html"> Comingsoon</a></li>
+                                <li><a href="page_maintenance.html"> Maintenance</a></li>
+                                <li><a href="page_404.html"> 404 Error</a></li>
+                                <li><a href="page_blank.html"> Blank Page</a></li>                                
+                            </ul> 
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)">Portfolio</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li class="has-submenu"><a href="javascript:void(0)"> Default Work</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="work_two.html">Work 2 Column</a></li>
+                                        <li><a href="work_three.html">Work 3 Column</a></li>
+                                        <li><a href="work_four.html">Work 4 Column</a></li>
+                                    </ul>  
+                                </li>
+                                <li class="has-submenu"><a href="javascript:void(0)"> Grid Work</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="work_grid_two.html">Work 2 Column</a></li>
+                                        <li><a href="work_grid_three.html">Work 3 Column</a></li>
+                                        <li><a href="work_grid_four.html">Work 4 Column</a></li>
+                                    </ul>  
+                                </li>
+                                <li class="has-submenu"><a href="javascript:void(0)"> Full width Work</a><span class="submenu-arrow"></span>
+                                    <ul class="submenu">
+                                        <li><a href="work_fullwidth_two.html">Work 2 Column</a></li>
+                                        <li><a href="work_fullwidth_three.html">Work 3 Column</a></li>
+                                        <li><a href="work_fullwidth_four.html">Work 4 Column</a></li>
+                                    </ul>  
+                                </li>
+                                <li><a href="work_noguttor.html"> No Guttors Work</a></li>
+                                <li><a href="work_masonry.html"> Masonry Work</a></li>
+                                <li><a href="work_single.html"> Single Work</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)">Blog</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="blog_two_column.html">Blog 2 column</a></li>
+                                <li><a href="blog_three_column.html">Blog 3 column</a></li>
+                                <li><a href="blog_four_column.html">Blog 4 column</a></li>
+                                <li><a href="blog_leftsidebar.html">Left Sidebar</a></li>
+                                <li><a href="blog_rightsidebar.html">Right Sidebar</a></li>
+                                <li><a href="blog_fullwidth.html">Full width</a></li>
+                                <li><a href="blog_masonry.html">Masonry Blog</a></li>
+                                <li><a href="blog_single.html">Single Blog</a></li>
+                            </ul>
+                        </li>
+                        
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)">Elements</a><span class="menu-arrow"></span>
+                            <ul class="submenu megamenu">
+                                <li>
+                                    <ul class="list-inline">
+                                        <li><a href="ele_accordion.html"><b class="fas fa-angle-right"></b> Accordion</a></li>
+                                        <li><a href="ele_alert.html"><b class="fas fa-angle-right"></b> Alert</a></li>
+                                        <li><a href="ele_button.html"><b class="fas fa-angle-right"></b> Buttons</a></li>
+                                        <li><a href="ele_badges.html"><b class="fas fa-angle-right"></b> Badges</a></li>
+                                        <li><a href="ele_clientslide.html"><b class="fas fa-angle-right"></b> Client Slider</a></li>
+                                        <li><a href="ele_carousel.html"><b class="fas fa-angle-right"></b> Carousel</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="list-inline">
+                                        <li><a href="ele_counter.html"><b class="fas fa-angle-right"></b> Counter</a></li>
+                                        <li><a href="ele_dropcaps.html"><b class="fas fa-angle-right"></b> Dropcaps</a></li>
+                                        <li><a href="ele_divider.html"><b class="fas fa-angle-right"></b> Divider</a></li>
+                                        <li><a href="ele_iconbox.html"><b class="fas fa-angle-right"></b> Icon Boxes</a></li>
+                                        <li><a href="ele_forms.html"><b class="fas fa-angle-right"></b> Forms</a></li>
+                                        <li><a href="ele_footer.html"><b class="fas fa-angle-right"></b> Footer</a></li>
+                                    </ul>
+                                </li>                                
+                                <li>
+                                    <ul class="list-inline">
+                                        <li><a href="ele_gallery.html"><b class="fas fa-angle-right"></b> Gallery</a></li>
+                                        <li><a href="ele_grid.html"><b class="fas fa-angle-right"></b> Grid</a></li>
+                                        <li><a href="ele_icon.html"><b class="fas fa-angle-right"></b> Icons</a></li>
+                                        <li><a href="ele_images.html"><b class="fas fa-angle-right"></b> Images</a></li>
+                                        <li><a href="ele_lightbox.html"><b class="fas fa-angle-right"></b> Lightbox</a></li>
+                                        <li><a href="ele_media.html"><b class="fas fa-angle-right"></b> Media</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="list-inline">
+                                        <li><a href="ele_progressbar.html"><b class="fas fa-angle-right"></b> Progressbar</a></li>
+                                        <li><a href="ele_process.html"><b class="fas fa-angle-right"></b> Process</a></li>
+                                        <li><a href="ele_typography.html"><b class="fas fa-angle-right"></b> Typography</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <a href="javascript:void(0)">Shop</a><span class="menu-arrow"></span>
+                            <ul class="submenu">
+                                <li><a href="shop_single.html"> Single Product</a></li>
+                                <li><a href="shop_cart.html"> Shop Cart</a></li>
+                                <li><a href="shop_checkout.html"> Checkout</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown d-none d-md-inline-block">
+                            <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="fas fa-shopping-cart noti-icon"></i>
+                                <sup><span class="shop-cart">3</span></sup>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right p-0">
+                                <div class="shopping-cart m-0">
+                                    <div class="shopping-cart-header">
+                                        <i class="fa fa-shopping-cart cart-icon"></i><span class="badge">3</span>
+                                        <div class="shopping-cart-total">
+                                            <span class="lighter-text">Total:</span>
+                                            <span class="main-color-text">$979.98</span>
+                                        </div>
+                                    </div>
+
+                                    <ul class="shopping-cart-items list-unstyled pl-0">
+                                        <li class="clearfix">
+                                            <img src="images/shop/item-1.png" alt="item-1" height="70" />
+                                            <span class="item-name">Sony DSC-RX100M III</span>
+                                            <span class="item-price">$849.99</span>
+                                            <span class="item-quantity">Quantity: 01</span>
+                                        </li>
+
+                                        <li class="clearfix">
+                                            <img src="images/shop/item-2.png" alt="item-2" height="70" />
+                                            <span class="item-name">Kindle, 6" Glare-Free To...</span>
+                                            <span class="item-price">$129.99</span>
+                                            <span class="item-quantity">Quantity: 01</span>
+                                        </li>
+
+                                        <li class="clearfix">
+                                            <img src="images/shop/item-3.png" alt="item-3" height="70" />
+                                            <span class="item-name">LG, 6" Glare-Free To...</span>
+                                            <span class="item-price">$239.99</span>
+                                            <span class="item-quantity">Quantity: 01</span>
+                                        </li>
+                                    </ul>
+
+                                    <a href="shop_checkout.html" class="btn btn-custom w-100">Checkout</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="dropdown d-none d-md-inline-block m-0">
+                            <a class="nav-link dropdown-toggle arrow-none pl-0" data-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="false" aria-expanded="false">
+                                <i class="fas fa-search noti-icon"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-search">
+                                <div>
+                                    <form role="search" class="navbar-form">
+                                        <input type="text" placeholder="Search..." name="s" class="form-control search-bar">
+                                        <a href="#" class="btn-search"><i class="fa fa-search"></i></a>
+                                    </form>
+                                </div>
+                            </div>                            
+                        </li> -->
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'dashboard' %}">Account</a></li>
+                        {% else %}
+                            <li><a href="{% url 'account_login' %}"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        {% block content %}
+        {% endblock content %}
+        
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-sm-30">
+                        <h4 class="text-uppercase text-white">TSYDA</h4>
+                        <!-- <a href="#" class="logo">
+                            <img src="{% static 'frontend/images/logo-light.png' %}" alt="missing_logo" height="16">
+                        </a> -->
+                        <p class="mt-30 text-white-50">
+                            Support the youth for a productive nation. Support the youth for a productive nation.
+                            Support the youth for a productive nation. Support the youth for a productive nation.
+                            Support the youth for a productive nation. Support the youth for a productive nation.
+                        </p>
+                        <div>
+                            <ul class="list-unstyled footer-social-icon mt-30">
+                                <li class="list-inline-item"><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <!-- <li class="list-inline-item"><a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="dribbble"><i class="fab fa-dribbble"></i></a></li> -->
+                                <li class="list-inline-item"><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-6 mb-sm-30">
+                        <h4 class="text-white font-weight-normal f-18">Quick Links</h4>
+                        <ul class="list-unstyled footer-list">
+                            <li><a href="{% url 'about' %}"> About Us</a></li>
+                            <li><a href="#"> Services</a></li>
+                            <li><a href="{% url 'terms-and-conditions' %}"> Terms of Reference</a></li>
+                            <li><a href="{% url 'privacy-policy' %}"> Privacy Policy</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 mb-sm-30">
+                        <h4 class="text-white font-weight-normal f-18">Recent Posts</h4>
+
+                        <div class="clearfix footer-recent">
+                            <div class="footer-recent-thumb"><img alt="img" src="{% static 'frontend/images/blog/foot-img-1.jpg' %}" class="img-fluid"></div>
+                            <div class="footer-recent-content"><a href="#">Test Post 3</a><span>June 02, 2020</span></div>
+                        </div>
+                        <div class="clearfix footer-recent">
+                            <div class="footer-recent-thumb"><img alt="img" src="{% static 'frontend/images/blog/foot-img-2.jpg' %}" class="img-fluid"></div>
+                            <div class="footer-recent-content"><a href="#">Test Post 2</a> <span>May 02, 2020</span></div>
+                        </div>
+                        <div class="clearfix footer-recent">
+                            <div class="footer-recent-thumb"><img alt="img" src="{% static 'frontend/images/blog/foot-img-3.jpg' %}" class="img-fluid"></div>
+                            <div class="footer-recent-content"><a href="#">Test Post 1</a> <span>April 01, 2020</span></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="text-white font-weight-normal f-18">Donate</h4>
+                        <p class="text-white-50 mb-30">Donate in this rewarding journey to change the lives of our youths.</p>
+                        <form>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <!-- <div class="foot-subscribe">
+                                        <input type="email" name="email" id="emailsubscribe" class="form-control" placeholder="Your Email" required>
+                                    </div>
+                                </div> -->
+                                <div class="col-lg-12 mt-3">
+                                    <a href="{% url 'contact' %}" class="btn btn-custom-white w-100"> Contact us for your donations.</a>
+                                    <!-- <input type="submit" id="submitsubscribe" name="send" class="btn btn-custom-white w-100" value="subscribe"> -->
+                                </div>
+                            </div>
+                        </form>
+                    </div> 
+                </div>
+            </div>
+            <hr />
+            <div class="container footer-bar">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        {% now "Y" as current_year %}
+                        <div class="copy-rights text-sm-left">
+                            <p class="mb-0">Copyright &copy; 2011 - {{ current_year }} TSYDA. All rights reserved.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="copy-rights text-sm-right">
+                        Powered by <a href="#">X-S Technologies</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+        <a href="#" class="back-to-top" id="back-to-top"> 
+            <i class="mdi mdi-chevron-up"> </i> 
+        </a>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <!-- LOGIN -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle">Login / Sign in</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="bg-white p-20 rounded box-shadow">
+                                        <form class="login-form">
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" placeholder="Email" name="email" required="">
+                                                </div>
+
+                                                <div class="col-lg-12">
+                                                    <label class="mt-3">Password</label>
+                                                    <input type="password" class="form-control" placeholder="Password" required="">
+                                                </div>
+
+                                                <div class="col-lg-12">
+                                                    <div class="custom-control mt-3 custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                        <label class="custom-control-label" for="customCheck1">Remember me</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 mt-3 mb-0">
+                                                    <button class="btn btn-custom w-100">Sign in</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- LOGIN -->
+
+                    <!-- REGISTER -->
+                    <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalCenterTitle1">Register / Sign up</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="bg-white p-20 rounded box-shadow">
+                                        <form class="login-form">
+                                            <div class="row">
+                                                <div class="col-lg-12">                                                    
+                                                    <label class="">First name</label>
+                                                    <input type="text" class="form-control" placeholder="First Name" name="s" required="">
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <label class="mt-3">Email</label>
+                                                    <input type="email" class="form-control" placeholder="Email" name="email" required="">
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <label class="mt-3">Password</label>
+                                                    <input type="password" class="form-control" placeholder="Password" required="">
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <label class="mt-3">Confirm Password</label>
+                                                    <input type="password" class="form-control" placeholder="Confirm Password" required="">
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <div class="custom-control mt-3 custom-checkbox">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                        <label class="custom-control-label" for="customCheck2">I Accept <a href="#">Terms And Condition</a></label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-12 mt-3 mb-0">
+                                                    <button class="btn btn-custom w-100">Register</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- REGISTER -->
+                </div>
+            </div>
+        </div>
+
+        <script src="{% static 'frontend/js/jquery.min.js' %}"></script>
+        <script src="{% static 'frontend/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static 'frontend/js/menu.js' %}"></script>
+        <script src="{% static 'frontend/js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'frontend/js/isotope.js' %}"></script>
+        <script src="{% static 'frontend/js/portfolio-filter.js' %}"></script> 
+        <script src="{% static 'frontend/js/owl.carousel.min.js' %}"></script>
+        <script src="{% static 'frontend/js/owlcarousel.init.js' %}"></script>
+        <script src="{% static 'frontend/js/slick.min.js' %}"></script> 
+        <script src="{% static 'frontend/js/slick.init.js' %}"></script> 
+        <script src="{% static 'frontend/js/jquery.simple-text-rotator.js' %}"></script>
+        <script src="{% static 'frontend/js/simple-text-rotator.init.js' %}"></script>
+        <script src="{% static 'frontend/js/counter.init.js' %}"></script>
+        <script src="{% static 'frontend/js/app.js' %}"></script>        
+    </body>
+</html>

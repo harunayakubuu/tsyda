@@ -1,0 +1,73 @@
+{% extends 'back_base.html' %}
+{% load static %}
+{% block title %}{{ block.super }} Contact Message Detail {% endblock title %}
+
+{% block content %}
+<div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>Message Detail</h1>
+              </div>
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="#">Home</a></li>
+                  <li class="breadcrumb-item active">Message Detail</li>
+                </ol>
+              </div>
+            </div>
+          </div><!-- /.container-fluid -->
+        </section>
+    
+        <!-- Main content -->
+        <section class="content">
+    
+          <!-- Default box -->
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Message Detail</h3>
+    
+              <!-- <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                  <i class="fas fa-minus"></i></button>
+                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                  <i class="fas fa-times"></i></button>
+              </div> -->
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <h5>
+                    {{ message.name }}
+                  </h5>
+                </div>
+                <div class="col-sm-3">
+                    {{ message.email }}
+                </div>
+                <div class="col-sm-3">
+                    {{ message.phone }}
+                </div>
+                <div class="col-sm-3">
+                    {{ message.date_recieved|date }}
+                </div>
+              </div>
+              <div class="row">
+                  {{ message.message }}
+              </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <a href="{% url 'message-list' %}" class="btn btn-primary">Back</a>
+              <a href="{% url 'message-delete' message.id %}" class="btn btn-danger">Delete</a>
+            </div>
+            <!-- /.card-footer-->
+          </div>
+          <!-- /.card -->
+    
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+{% endblock content %}    

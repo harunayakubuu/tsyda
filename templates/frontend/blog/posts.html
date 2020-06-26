@@ -1,0 +1,272 @@
+{% extends 'front_base.html' %}
+{% load static %}
+{% block head_title %}{{ block.super }} Blog Posts {% endblock head_title %}
+
+{% block content %}
+<section class="bg-default" style="background-image:url('{% static "frontend/images/home/bg-default.jpeg" %}')">
+    <div class="home-center">
+        <div class="home-desc-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="page-next-level text-white">
+                            <h4 class="text-uppercase text-white">Blog</h4>
+                            <div class="page-two page-next"> <a href="{% url 'index' %}">Home</a> <i class="mdi mdi-chevron-right"></i> &nbsp;<span>Blog</span> </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    {% for post in page_obj %}
+                    <div class="col-lg-6">
+                        
+                        <article class="post bg-white mb-30">
+                            <div class="post-preview">
+                                <a href="{{ post.get_absolute_url }}"><img src="{{ post.picture.url }}" alt="img-missing" class="img-fluid" height="800px" width="1200px"></a>
+                            </div>
+
+                            <div class="post-head-content">
+                                <div class="post-header">
+                                    <h2 class="post-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                                    <ul class="post-meta list-unstyled">
+                                        <li class="list-inline-item"><i class="fas fa-user"></i> <a href="#"><small>{{ post.author }}</small></a></li>
+                                        <li class="list-inline-item"><i class="fas fa-tag"></i>
+                                            {% for cat in post.categories.all %}
+                                                <a href="#"><small>{{ cat }}{% if not forloop.last %}, {% endif %}</small></a></li>
+                                            {% endfor %}
+                                        <li class="list-inline-item"><i class="far fa-calendar-check"></i> <small>{{ post.created }}</small></li>
+                                    </ul>
+                                </div>
+
+                                <div class="post-content">
+                                    <p class="text-muted mb-0">{{ post.description|linebreaks|truncatewords:"30" }}.</p>
+                                </div>
+                                <span class="bar"></span>
+                                <div class="post-footer">
+                                    <div class="likes">
+                                        <ul class="post-meta list-unstyled blog-social">
+                                            <li class="list-inline-item"><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                            <li class="list-inline-item"><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                                            <li class="list-inline-item"><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="post-more"><a href="{{ post.get_absolute_url }}">Read More <i class="mdi mdi-arrow-right"></i></a></div>
+                                </div>
+                            </div>
+                        </article> 
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="text-center">
+
+                                <div class="pagination">
+                                        <span class="step-links">
+                                            {% if page_obj.has_previous %}
+                                            <a href="?page=1">&laquo; first</a>
+                                            <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                                            {% endif %}
+                                            <span class="current">
+                                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                                            </span>
+                                            {% if page_obj.has_next %}
+                                            <a href="?page={{ page_obj.next_page_number }}">next</a>
+                                            <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                                            {% endif %}
+                                        </span>
+                                    </div>
+
+                            <!-- <ul class="pagination justify-content-center">
+                                <li class="next"><a href="#"><i class="fas fa-caret-left"></i></a></li>
+                                <li class="active"><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                                <li><a href="#">4</a></li>
+                                <li class="prev"><a href="#"><i class="fas fa-caret-right"></i></a></li>
+                            </ul> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mt-sm-30">
+                <div class="sidebar">
+                    <aside class="widget widget_search mb-0">
+                        <form>
+                            <input type="text" value="" class="form-control" name="s" id="s" placeholder="Search">
+                            <button class="search-button" type="submit"><span class="fas fa-search"></span></button>
+                        </form>
+                    </aside>
+                </div>
+                
+                <!--<div class="sidebar">
+                    <div class="widget text-center">
+                        <h4 class="text-uppercase f-17">About me</h4>
+                        <img src="images/client/img-1.jpg" class="d-block mx-auto img-fluid" alt="img-missing">
+                        <p class="mt-3">If you use this site regularly and would like to help keep the site on the Internet.</p>
+                        <a href="#" class="btn btn-custom mt-2">Read more <i class="mdi mdi-arrow-right"></i></a>
+                        <div class="text-center mt-4">
+                            <ul class="list-unstyled footer-social-icon">
+                                <li class="list-inline-item"><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="dribbble"><i class="fab fa-dribbble"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>-->
+            
+                <div class="sidebar">
+                    <div class="widget">
+                        <h4 class="text-uppercase text-center f-17">Letest Posts</h4>
+                        <div class="widget_recent_entries_custom">
+                            <ul class="">
+                                {% for post in recent %}
+                                <li class="clearfix">
+                                    <div class="wi">
+                                        <a href="{{ post.get_absolute_url }}"><img src="{{ post.picture.url }}" alt="" class="img-fluid"></a>
+                                    </div>
+                                    <div class="wb"><a href="#">{{ post.title }}</a> <span class="post-date"><i class="far fa-calendar-check"></i> {{ post.created|date }}</span></div>
+                                </li>
+                                {% endfor %}
+                                <!-- <li class="clearfix">
+                                    <div class="wi">
+                                        <a href="#"><img src="images/blog/side-2.jpg" alt="" class="img-fluid"></a>
+                                    </div>
+                                    <div class="wb"><a href="#">Nature valley with cooling..</a> <span class="post-date"><i class="far fa-calendar-check"></i> January 01, 2019</span></div>
+                                </li>
+                                <li class="clearfix">
+                                    <div class="wi">
+                                        <a href="#"><img src="images/blog/side-3.jpg" alt="" class="img-fluid"></a>
+                                    </div>
+                                    <div class="wb"><a href="#">15 Best Healthy and Easy Salad..</a> <span class="post-date"><i class="far fa-calendar-check"></i> January 01, 2019</span></div>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- <div class="sidebar">
+                    <div class="widget">
+                        <h4 class="text-uppercase text-center f-17">Instagram</h4>
+                        <div class="widget-grid">
+                            <div class="item">
+                                <a href="#">
+                                    <img src="images/blog/side-1.jpg" alt="img-missing" class="img-fluid mx-auto d-block">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="images/blog/side-2.jpg" alt="img-missing" class="img-fluid mx-auto d-block">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="images/blog/side-3.jpg" alt="img-missing" class="img-fluid mx-auto d-block">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="images/blog/side-4.jpg" alt="img-missing" class="img-fluid mx-auto d-block">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="images/blog/side-5.jpg" alt="img-missing" class="img-fluid mx-auto d-block">
+                                </a>
+                            </div>
+                            <div class="item">
+                                <a href="#">
+                                    <img src="images/blog/side-6.jpg" alt="img-missing" class="img-fluid mx-auto d-block">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            
+                <!-- <div class="sidebar">
+                    <div class="widget">
+                        <h4 class="text-uppercase text-center f-17">Tags</h4>
+                        <div class="tagcloud">
+                            <a href="#">Business</a>
+                            <a href="#">Finance</a>
+                            <a href="#">Marketing</a>
+                            <a href="#">Fashion</a>
+                            <a href="#">Bride</a>
+                            <a href="#">Lifestyle</a>
+                            <a href="#">Travel</a>
+                            <a href="#">Beauty</a>
+                            <a href="#">Video</a>
+                            <a href="#">Audio</a>
+                        </div>
+                    </div>
+                </div> -->
+                
+                <!-- <div class="sidebar">
+                    <div class="widget">
+                        <h4 class="text-uppercase text-center f-17">Newsletter</h4>
+                        <div>
+                            <p>Sign up to receive content updates and product roundups!</p>
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <input type="email" name="email" id="email1" class="form-control" placeholder="Your Email" required>
+                                    </div>
+                                    <div class="col-lg-12 mt-3">
+                                        <input type="submit" id="submit1" name="send" class="btn btn-outline-white w-100" value="subscribe">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> -->
+            
+                <!-- <div class="sidebar mb-0">
+                    <div class="widget">
+                        <h4 class="text-uppercase text-center f-17">Subscribe & Follow</h4>
+                        <div class="text-center">
+                            <ul class="list-unstyled footer-social-icon">
+                                <li class="list-inline-item"><a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="dribbble"><i class="fab fa-dribbble"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="instagram"><i class="fab fa-instagram"></i></a></li>
+                                <li class="list-inline-item"><a href="#" class="twitter"><i class="fab fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- <section class="section bg-white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="section-title text-center">
+                    <h3 class="f-24">Let's Talk</h3>
+                    <div class="spacer-15"></div>
+                    <p class="text-muted">All the lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+                    <div class="spacer-15"></div>
+                    <div>
+                        <a href="page_contact-one.html" class="btn btn-custom">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+{% endblock %}

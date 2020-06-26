@@ -1,0 +1,208 @@
+{% extends 'front_base.html' %}
+{% load static %}
+{% block head_title %}{{ block.super }} Projects {% endblock %}
+
+{% block content %}
+<section class="bg-default" style="background-image:url('{% static "frontend/images/home/bg-default.jpeg" %}')">
+    <div class="home-center">
+        <div class="home-desc-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="page-next-level text-white">
+                            <h4 class="text-uppercase text-white">Projects</h4>
+                            <div class="page-two page-next"> <a href="{% url 'index' %}">Home</a> <i class="mdi mdi-chevron-right"></i> &nbsp;<span>Projects</span> </div>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <ul class="col container-filter portfolioFilter list-unstyled mb-0 text-center" id="filter">
+                    <li><a class="categories active" data-filter="*">All</a></li>
+                    <li><a class="categories" data-filter=".finance">Education</a></li>
+                    <li><a class="categories" data-filter=".creative">Humanitarian</a></li>
+                    <li><a class="categories" data-filter=".personal">Empowermen</a></li>
+                    <li><a class="categories" data-filter=".photography">Rehabilitation</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-30">
+        <div class="port portfolio-masonry">
+            <div class="portfolioContainer row">
+                {% for project in projects %}
+                    <div class="col-md-3 finance">
+                        <div class="portfolio-box">                                
+                            <img src="{{ project.image.url }}" class="img-fluid" alt="image">
+                            <div class="portfolio-bg-overlay">                                    
+                                <a class="mfp-image text-center" href="{{ project.image.url }}" title="{{ project.project_title }}"><i class="fas fa-image text-white"></i></a>
+                            </div>
+                            <div class="gallary-title text-center">
+                                <h6><a href="{% url 'project-detail' project.id %}">{{ project.project_title }}</a></h6>
+                                <span>
+                                    {% for cat in project.categories.all %}
+                                        <small>{{ cat }}{% if not forloop.last %}, {% endif %}</small>
+                                    {% endfor %}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+
+                <!-- <div class="col-md-3 creative">
+                    <div class="portfolio-box">                                
+                        <img src="images/work/port-2.jpg" class="img-fluid" alt="image">
+                        <div class="portfolio-bg-overlay">                                    
+                            <a class="mfp-image text-center" href="images/work/port-2.jpg" title="Business Post"><i class="fas fa-image text-white"></i></a>
+                        </div>
+                        <div class="gallary-title text-center">
+                            <h6><a href="work_single.html">Project Name</a></h6>
+                            <span>Catagories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 personal">
+                    <div class="portfolio-box">                                
+                        <img src="images/work/port-3.jpg" class="img-fluid" alt="image">
+                        <div class="portfolio-bg-overlay">                                    
+                            <a class="mfp-image text-center" href="images/work/port-3.jpg" title="Business Post"><i class="fas fa-image text-white"></i></a>
+                        </div>
+                        <div class="gallary-title text-center">
+                            <h6><a href="work_single.html">Project Name</a></h6>
+                            <span>Catagories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 photography">
+                    <div class="portfolio-box">                                
+                        <img src="images/work/port-4.jpg" class="img-fluid" alt="image">
+                        <div class="portfolio-bg-overlay">                                    
+                            <a class="mfp-image text-center" href="images/work/port-4.jpg" title="Business Post"><i class="fas fa-image text-white"></i></a>
+                        </div>
+                        <div class="gallary-title text-center">
+                            <h6><a href="work_single.html">Project Name</a></h6>
+                            <span>Catagories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 finance">
+                    <div class="portfolio-box">                                
+                        <img src="images/work/port-5.jpg" class="img-fluid" alt="image">
+                        <div class="portfolio-bg-overlay">                                    
+                            <a class="mfp-image text-center" href="images/work/port-5.jpg" title="Business Post"><i class="fas fa-image text-white"></i></a>
+                        </div>
+                        <div class="gallary-title text-center">
+                            <h6><a href="work_single.html">Project Name</a></h6>
+                            <span>Catagories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 creative">
+                    <div class="portfolio-box">                                
+                        <img src="images/work/port-6.jpg" class="img-fluid" alt="image">
+                        <div class="portfolio-bg-overlay">                                    
+                            <a class="mfp-image text-center" href="images/work/port-6.jpg" title="Business Post"><i class="fas fa-image text-white"></i></a>
+                        </div>
+                        <div class="gallary-title text-center">
+                            <h6><a href="work_single.html">Project Name</a></h6>
+                            <span>Catagories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 personal">
+                    <div class="portfolio-box">                                
+                        <img src="images/work/port-7.jpg" class="img-fluid" alt="image">
+                        <div class="portfolio-bg-overlay">                                    
+                            <a class="mfp-image text-center" href="images/work/port-7.jpg" title="Business Post"><i class="fas fa-image text-white"></i></a>
+                        </div>
+                        <div class="gallary-title text-center">
+                            <h6><a href="work_single.html">Project Name</a></h6>
+                            <span>Catagories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 photography">
+                    <div class="portfolio-box">                                
+                        <img src="images/work/port-8.jpg" class="img-fluid" alt="image">
+                        <div class="portfolio-bg-overlay">                                    
+                            <a class="mfp-image text-center" href="images/work/port-8.jpg" title="Business Post"><i class="fas fa-image text-white"></i></a>
+                        </div>
+                        <div class="gallary-title text-center">
+                            <h6><a href="work_single.html">Project Name</a></h6>
+                            <span>Catagories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 finance">
+                    <div class="portfolio-box">                                
+                        <img src="images/work/port-9.jpg" class="img-fluid" alt="image">
+                        <div class="portfolio-bg-overlay">                                    
+                            <a class="mfp-image text-center" href="images/work/port-9.jpg" title="Business Post"><i class="fas fa-image text-white"></i></a>
+                        </div>
+                        <div class="gallary-title text-center">
+                            <h6><a href="work_single.html">Project Name</a></h6>
+                            <span>Catagories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 creative">
+                    <div class="portfolio-box">                                
+                        <img src="images/work/port-10.jpg" class="img-fluid" alt="image">
+                        <div class="portfolio-bg-overlay">                                    
+                            <a class="mfp-image text-center" href="images/work/port-10.jpg" title="Business Post"><i class="fas fa-image text-white"></i></a>
+                        </div>
+                        <div class="gallary-title text-center">
+                            <h6><a href="work_single.html">Project Name</a></h6>
+                            <span>Catagories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 personal">
+                    <div class="portfolio-box">                                
+                        <img src="images/work/port-11.jpg" class="img-fluid" alt="image">
+                        <div class="portfolio-bg-overlay">                                    
+                            <a class="mfp-image text-center" href="images/work/port-11.jpg" title="Business Post"><i class="fas fa-image text-white"></i></a>
+                        </div>
+                        <div class="gallary-title text-center">
+                            <h6><a href="work_single.html">Project Name</a></h6>
+                            <span>Catagories</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 photography">
+                    <div class="portfolio-box">                                
+                        <img src="images/work/port-12.jpg" class="img-fluid" alt="image">
+                        <div class="portfolio-bg-overlay">                                    
+                            <a class="mfp-image text-center" href="images/work/port-12.jpg" title="Business Post"><i class="fas fa-image text-white"></i></a>
+                        </div>
+                        <div class="gallary-title text-center">
+                            <h6><a href="work_single.html">Project Name</a></h6>
+                            <span>Catagories</span>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

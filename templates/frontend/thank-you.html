@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TSYDA - Thank you</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Premium Bootstrap 4 Landing Page Template" />
+    <meta name="keywords" content="bootstrap 4, premium, marketing, multipurpose" />
+    <meta content="Shreethemes" name="author" />
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link href="{% static 'frontend/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'frontend/css/materialdesignicons.min.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'frontend/css/fontawesome.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'frontend/css/pe-icon-7-stroke.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'frontend/css/style.css' %}" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!-- <div id="preloader">
+        <div id="status">
+            <div class="spinner">
+                <div class="cube1"></div>
+                <div class="cube2"></div>
+            </div>
+        </div>
+    </div> -->
+
+    <section class="section bg-home" style="background-image: url('{% static "frontend/images/home/thumbup.jpeg" %}');">
+        <div class="bg-overlay"></div>
+        <div class="home-center">
+            <div class="home-desc-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center error-page">
+                            <!-- <a href="{% url 'index' %}">
+                                <img src="{% static 'frontend/images/logo-light.png' %}" alt="missing_logo" height="40">
+                                <div class="spacer-30"></div>
+                            </a> -->
+                            <h4 class="text-white mb-3">We have recieved your submission. Thank you for contacting us.</h4>
+                            <!-- <h1 class="text-white mb-3"><i class="fas fa-thumbsup"></i></h1> -->
+                            <h4 class="text-white mb-3">We shall get back to you shortly.</h4>
+                            <p class="text-white-50">Use the navigation above or the button below to get back and track.</p>
+                            <a href="{% url 'index' %}" class="btn btn-custom mt-3">Go To Home Page</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script src="{% static 'frontend/js/jquery.min.js' %}"></script>
+    <script src="{% static 'frontend/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'frontend/js/menu.js' %}"></script>
+    <script src="{% static 'frontend/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'frontend/js/app.js' %}"></script>
+    
+</body>
+</html>
